@@ -1,0 +1,23 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    
+    <package name="default" extends="struts-default">
+        
+        <action name="RegistrarAdministrador" class="DatosDB.Administrador" method="registrarAdministrador">
+            <result name="success">/jsp/RegistrarAdministradores.jsp</result>
+        </action>
+        
+        <action name="Trabajador1" class="DatosDB.iniciarSesion" method="iniciarSesionAdministrador">
+            <result name="success">/jsp/Trabajador.jsp</result>
+        </action>
+        
+        <action name="Trabajador2" class="DatosDB.Trabajador" method="registrarTrabajador">
+            <result name="success">/jsp/Trabajador.jsp</result>
+        </action>
+        
+        
+    </package>
+</struts>
