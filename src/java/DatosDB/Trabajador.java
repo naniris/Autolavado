@@ -190,20 +190,38 @@ public class Trabajador extends ActionSupport implements SessionAware{
     Administrador adm = new Administrador();
     adm.ConectarBD();
         try {
-            String modificarTrabajador = "Update trabajador nombre=?, apellidoP=?, apellidoM=?, telefono=? where idTrabajador=?";
+            String modificarTrabajador = "update trabajador nombre=?, apellidoP=?, apellidoM=?, telefono=? where idTrabajador=?";
             PreparedStatement mTrabajador = (PreparedStatement)adm.conexionBaseDatos.prepareStatement(modificarTrabajador);
             mTrabajador.setString(1, nombre_tra);
             mTrabajador.setString(2, apaterno_tra);
             mTrabajador.setString(3, amaterno_tra);
             mTrabajador.setString(4, telefono_tra);
+            mTrabajador.setString(5, idTrabajador);
             mTrabajador.executeUpdate();
             mTrabajador.close();
-            consultaTrabajador();
             modificarT = "success";
         } catch (Exception e) {
             modificarT = "error";
         }
         return modificarT;
+    }
+    
+    public String eliminarT = "error";
+    public String EliminarTrabajador(){
+    Administrador adm = new Administrador();
+    adm.ConectarBD();
+        try {
+            String eliminarTrabajador = "delete from trabajadores where idTrabajador=?";
+            PreparedStatement eTrabajador = (PreparedStatement)adm.conexionBaseDatos.prepareStatement(eliminarTrabajador);
+            eTrabajador.setString(1, idTrabajador);
+            eTrabajador.executeUpdate();
+            consultaTrabajador();
+            eliminarT = "success";
+        } catch (Exception e) {
+            eliminarT = "error";
+        }
+        
+       return eliminarT; 
     }
 }
 
