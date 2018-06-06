@@ -51,16 +51,16 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a data-scroll href="#home-section" class="nav-link">Inicio</a>
+              <a data-scroll href="#inicio" class="nav-link">Inicio</a>
             </li>
             <li class="nav-item">
-              <a data-scroll href="#info-servicios" class="nav-link">Contacto</a>
+              <a data-scroll href="#contacto" class="nav-link">Contacto</a>
             </li>
             <li class="nav-item">
-              <a data-scroll href="#info-seccion" class="nav-link">Servicios</a>
+              <a data-scroll href="#servicios" class="nav-link">Servicios</a>
             </li>
             <li class="nav-item">
-                <a data-scroll href="#info-entrar" class="nav-link">Entrar</a>
+                <a data-scroll href="#entrar" class="nav-link">Entrar</a>
             </li>
           </ul>
         </div>
@@ -69,7 +69,7 @@
    <br>
    <br>
    <br>
-   <header id="home-section">
+    <header id="home-section">
       <div class="dark-overlay">
         <div class="home-inner">
           <div class="container">
@@ -138,7 +138,7 @@
                       </table>
               </div>
               <!-- SECOND COLUMN -->
-              <div class="col-lg-4" id="info-entrar">
+              <div class="col-lg-4" id="entrar">
                 <br>
                 <br>
                 <br>
@@ -164,7 +164,6 @@
         </div>
       </div>
     </header>
-
   
     <div class="container">
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -196,7 +195,7 @@
           </a>
           </div>
     </div>
-    <section class="info-section bg-light text-muted py-5" id="info-seccion">
+    <section class="info-section bg-light text-muted py-5" id="servicios">
       <div class="container">
         <div class="row">
           <div class="col-md-1">
@@ -253,7 +252,7 @@
     </section>
 
 
-  <div style="background-color:silver" id="info-servicios">
+  <div style="background-color:silver" id="contacto">
     <section class="info-head-section">
       <div class="container">
         <div class="row">

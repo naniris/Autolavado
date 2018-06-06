@@ -36,9 +36,6 @@
                 <a href="/Autolavado/" class="nav-link">Inicio</a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">Consultar Trabajadores</a>
-              </li>
-              <li class="nav-item">
                 <a href="#info-seccion" class="nav-link">Modificar</a>
               </li>
               <li class="nav-item">
@@ -106,6 +103,7 @@
                 <tbody>
                    <s:iterator value="Trabajador" > 
                     <tr>    
+                       
                         <td class="text-center"><s:property value="idTrabajador"/></td> 
                         <td class="text-center"><s:property value="nick_adm"/></td> 
                         <td class="text-center"><s:property value="nombre_tra"/></td> 
