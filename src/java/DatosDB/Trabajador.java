@@ -162,6 +162,49 @@ public class Trabajador extends ActionSupport implements SessionAware{
         
         return consultaT;
     }
+    public String detalleT = "error";
+    public String DetalleTrabajador(){
+    Administrador adm = new Administrador();    
+    adm.ConectarBD();
+        try {
+          String consultaTrabajador = "select * from trabajadores where idTrabajador = '"+idTrabajador+"'";
+          PreparedStatement DatosTrabajador = (PreparedStatement)adm.conexionBaseDatos.prepareStatement(consultaTrabajador);
+          ResultSet Datos = DatosTrabajador.executeQuery();
+          while(Datos.next()){
+              setIdTrabajador(Datos.getString("idTrabajador"));
+              setNick_adm(Datos.getString("nickUsuario"));
+              setNombre_tra(Datos.getString("nombre"));
+              setApaterno_tra(Datos.getString("apellidoP"));
+              setAmaterno_tra(Datos.getString("apellidoM"));
+              setTelefono_tra(Datos.getString("telefono"));
+          }
+          detalleT = "success";
+        } catch (Exception e) {
+          detalleT = "error";
+        }
+        return detalleT;
+    }
+    
+    public String modificarT = "error";
+    public String modificarTrabajador(){
+    Administrador adm = new Administrador();
+    adm.ConectarBD();
+        try {
+            String modificarTrabajador = "Update trabajador nombre=?, apellidoP=?, apellidoM=?, telefono=? where idTrabajador=?";
+            PreparedStatement mTrabajador = (PreparedStatement)adm.conexionBaseDatos.prepareStatement(modificarTrabajador);
+            mTrabajador.setString(1, nombre_tra);
+            mTrabajador.setString(2, apaterno_tra);
+            mTrabajador.setString(3, amaterno_tra);
+            mTrabajador.setString(4, telefono_tra);
+            mTrabajador.executeUpdate();
+            mTrabajador.close();
+            consultaTrabajador();
+            modificarT = "success";
+        } catch (Exception e) {
+            modificarT = "error";
+        }
+        return modificarT;
+    }
 }
 
    
