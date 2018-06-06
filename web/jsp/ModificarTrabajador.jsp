@@ -20,7 +20,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-             <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top" >
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top" >
         <div class="container">
           <a style='color:white' class="navbar-brand">
             Autolavado Orozco
@@ -34,7 +34,7 @@
                 <a href="/Autolavado/" class="nav-link">Inicio</a>
               </li>
               <li class="nav-item">
-                <a href="#info-seccion" class="nav-link">Modificar</a>
+                <a href="./jsp/ModificarTrabajador.jsp" class="nav-link">Modificar</a>
               </li>
               <li class="nav-item">
                   <a href="#" class="nav-link">Eliminar</a>
