@@ -36,7 +36,7 @@
                 <a href="/Autolavado/" class="nav-link">Inicio</a>
               </li>
               <li class="nav-item">
-                <a href="#info-seccion" class="nav-link">Modificar</a>
+                <a href="./jsp/ModificarTrabajador.jsp"" class="nav-link">Modificar</a>
               </li>
               <li class="nav-item">
                   <a href="#" class="nav-link">Eliminar</a>
