@@ -18,6 +18,21 @@
             <result name="success">/jsp/Trabajador.jsp</result>
         </action>
         
+        <action name="DetalleTrabajador" class="DatosDB.Trabajador" method="DetalleTrabajador">
+            <result name="success">/jsp/Trabajador.jsp</result>
+        </action>
+        
+        <action name="modificarTrabajador" class="DatosDB.Trabajador" method="modificarTrabajador">
+            <result name="success">/jsp/Trabajador.jsp</result>
+        </action>
+        
+        <action name="EliminarTrabajador" class="DatosDB.Trabajador" method="EliminarTrabajador">
+            <result name="success">/jsp/EliminarTrabajador.jsp</result>
+        </action>
+        
+        <action name="EliminarAdministrador" class="DatosDB.Administrador" method="EliminarAdministrador">
+            <result name="success">/jsp/EliminarAdministrador.jsp</result>
+        </action>
         
     </package>
 </struts>

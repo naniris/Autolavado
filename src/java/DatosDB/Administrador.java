@@ -119,7 +119,7 @@ public class Administrador {
         }
         return resConexion;
     }
-    
+
      public String registrarAdministrador(){
         ConectarBD();
         try {
@@ -133,15 +133,50 @@ public class Administrador {
             datosRegistro.setString(6,telefono_adm);
             datosRegistro.setString(7,passwd_adm);
             datosRegistro.executeUpdate();
+            
+            ConsultaAdministrador administrador = new ConsultaAdministrador();
+            administrador.consultaAdministrador();
+            this.ConsultaAdministrador = administrador.getConsultaAdministrador();
+            
             resAdministrador="success"; 
-//            Empresas ee = new Empresas();
-//            ee.consultarEmpresas();
+            
             } catch (Exception e) {
                 resAdministrador="error";
             }
             return resAdministrador;
     }
+     
     
-    
-    
+    public List<ConsultaAdministrador> ConsultaAdministrador = new ArrayList<ConsultaAdministrador>(); 
+
+    public List<ConsultaAdministrador> getConsultaAdministrador() {
+        return ConsultaAdministrador;
+    }
+
+    public void setConsultaAdministrador(List<ConsultaAdministrador> ConsultaAdministrador) {
+        this.ConsultaAdministrador = ConsultaAdministrador;
+    }
+
+     
+     
+     
+     
+     
+     public String eliminarA = "error";
+     public String EliminarAdministrador(){
+        ConectarBD();
+         try {
+            String eliminarTrabajador = "delete from administradores where nickUsuario=?";
+            PreparedStatement eAdministrador = (PreparedStatement)conexionBaseDatos.prepareStatement(eliminarTrabajador);
+            eAdministrador.setString(1, nick_adm);
+            eAdministrador.executeUpdate();
+            ConsultaAdministrador administrador = new ConsultaAdministrador();
+            administrador.consultaAdministrador();
+            this.ConsultaAdministrador = administrador.getConsultaAdministrador();
+            eliminarA = "success";
+         } catch (Exception e) {
+             eliminarA = "error";
+         }
+         return eliminarA;
+     }
 }

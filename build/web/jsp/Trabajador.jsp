@@ -36,14 +36,14 @@
                 <a href="/Autolavado/" class="nav-link">Inicio</a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">Consultar Trabajadores</a>
+                <a href="#modificar" class="nav-link">Modificar</a>
               </li>
               <li class="nav-item">
-                <a href="#info-seccion" class="nav-link">Modificar</a>
+                  <a href="./jsp/EliminarTrabajador.jsp" class="nav-link">Eliminar</a>
               </li>
               <li class="nav-item">
-                  <a href="#" class="nav-link">Eliminar</a>
-                </li>
+                  <a href="./jsp/Servicio.jsp" class="nav-link">Agregar Servicios</a>
+              </li>
             </ul>
           </div>
         </div>
@@ -58,6 +58,8 @@
       <s:else>
       <div class="col-lg-5" style="margin-left: 30%">
             <div class="form-group">
+                <a href="/Autolavado/" style="margin-left: -60%">Cerrar Sesión
+                    <s:property value="#session==null"/></a>
                 <h1 style="margin-left: -60%"> Bienvenido:
                  <s:property value="#session.nick_adm"/> </h1>
                 <h2 align="center">Registrar Trabajador</h2>
@@ -106,6 +108,7 @@
                 <tbody>
                    <s:iterator value="Trabajador" > 
                     <tr>    
+                       
                         <td class="text-center"><s:property value="idTrabajador"/></td> 
                         <td class="text-center"><s:property value="nick_adm"/></td> 
                         <td class="text-center"><s:property value="nombre_tra"/></td> 
@@ -119,6 +122,63 @@
             </table>
         </s:else>
    
+          <div class="col-lg-5" style="margin-left: 30%" id="modificar">
+            <div class="form-group">
+                <br>
+                <br>
+                <br>
+                <h2 align="center">Modificar Trabajador</h2>
+                <br>
+                <form action="DetalleTrabajador" method="post">
+                <s:select label="N° del Trabajador" headerKey="-1"
+                          headerValue="--Seleccione el numero del trabajador"
+                          list="Trabajador" listValue="nickUsuario" listKey="idTrabajador" name="idTrabajador"/>
+                <br>
+                <input type="submit" value="Listar Datos"/>
+                </form>
+                <form action="modificarTrabajador" method="post">  
+                <br>
+                    <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1">N° Trabajador:</span>
+                    </div>
+                        <s:textfield type="text" name="idTrabajador" maxlength="11" class="form-control" placeholder="Numero del trabajador" aria-label="Username" aria-describedby="basic-addon1" readonly="true"/>
+                    </div>
+                    <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1">Nick del Administrador:</span>
+                    </div>
+                        <s:textfield type="text" name="nick_adm" maxlength="20" class="form-control" placeholder="Nick del Administrador" aria-label="Username" aria-describedby="basic-addon1" readonly="true"/>
+                    </div>
+                    <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1">Nombre(s):</span>
+                    </div>
+                        <s:textfield type="text" name="nombre_tra" maxlength="30" class="form-control" placeholder="Nombre(s)" aria-label="Username" aria-describedby="basic-addon1"/>
+                    </div>
+                    <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1">Apellido Paterno:</span>
+                    </div>
+                        <s:textfield type="text" name="apaterno_tra" maxlength="20" class="form-control" placeholder="Apellido Paterno" aria-label="Username" aria-describedby="basic-addon1"/>
+                    </div>
+                    <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1">Apellido Materno:</span>
+                    </div>
+                        <s:textfield type="text" name="amaterno_tra" maxlength="20" class="form-control" placeholder="Apellido Materno" aria-label="Username" aria-describedby="basic-addon1"/>
+                    </div>
+                    <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1">Telefono:</span>
+                    </div>
+                        <s:textfield type="text" name="telefono_tra" maxlength="13" class="form-control" placeholder="Telefono" aria-label="Username" aria-describedby="basic-addon1"/>
+                    </div>
+                    <input type="submit" value="Modificar" class="btn btn-success btn-block" readonly="false">
+                </form>
+            </div>
+        </div>        
+          
     <hr style="color:white">  
     <footer>
       <div class="container">

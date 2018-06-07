@@ -21,7 +21,7 @@
         <link rel="stylesheet" href="../main.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    <body>
+    <body   >
           
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
         <div class="container">
@@ -38,14 +38,8 @@
                 <a href="/Autolavado/" class="nav-link">Inicio</a>
               </li>
               <li class="nav-item">
-                <a href="../index.html" class="nav-link">Contacto</a>
+               <a href="../jsp/EliminarAdministrador.jsp" class="nav-link">Eliminar</a>
               </li>
-              <li class="nav-item">
-                <a href="#info-seccion" class="nav-link">Servicios</a>
-              </li>
-              <li class="nav-item">
-                  <a href="#" class="nav-link">Entrar</a>
-                </li>
             </ul>
           </div>
         </div>
@@ -54,33 +48,93 @@
       <br>
       <br>
       <br>
-      <div class="col-lg-5" style="margin-left: 30%">
+        <div class="col-lg-5"  style="margin-left: 30%">
             <div class="form-group">
                 <h1 align="center">Registrate!</h1>
                 <br>
                 
-                <form action="RegistrarAdministrador" method="post">
-                    <label> Usuario: </label> 
-                    <input type="text" name="nick_adm" maxlength="15" placeholder="Por ejemplo: Peter"  class="form-control" aria-label="Default" ><br>
-                    <label> Nombre(s):</label> 
-                    <input type="text" name="nombre_adm" maxlength="30" class="form-control" aria-label="Default"  ><br>
-                    <label> Apellido Paterno:</label> 
-                    <input type="text" name="apaterno_adm" maxlength="20" class="form-control" aria-label="Default"  ><br>
-                    <label> Apellido Materno:</label> 
-                    <input type="text" name="amaterno_adm" maxlength="20" class="form-control" aria-label="Default"  ><br> 
-                    <label> Dirección:</label> 
-                    <input type="text" name="direccion_adm" maxlength="50" class="form-control" aria-label="Default"  ><br>
-                    <label> Teléfono: </label> 
-                    <input type="tel" name="telefono_adm" maxlength="13" class="form-control" aria-label="Default"  ><br>
-                    <label> Contraseña:</label> 
-                    <input type="password" name="passwd_adm" maxlength="20" class="form-control" aria-label="Default"  > <br>
-                    <br>
-                    <input type="submit" value="Registrarme" class="btn btn-primary btn-block" readonly="false">
-                </form>
+                 <form action="RegistrarAdministrador" method="post">
+                    <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1">Usuario:</span>
+                    </div>
+                        <input type="text" name="nick_adm" maxlength="30" class="form-control" placeholder="Usuario" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1">Nombre(s):</span>
+                    </div>
+                        <input type="text" name="nombre_adm" maxlength="30" class="form-control" placeholder="Nombre(s)" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1">Apellido Paterno:</span>
+                    </div>
+                        <input type="text" name="apaterno_adm" maxlength="20" class="form-control" placeholder="Apellido Paterno" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1">Apellido Materno:</span>
+                    </div>
+                        <input type="text" name="amaterno_adm" maxlength="20" class="form-control" placeholder="Apellido Materno" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1">Direccion:</span>
+                    </div>
+                        <input type="text" name="direccion_adm" maxlength="30" class="form-control" placeholder="Direccion" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+ 
+                    <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1">Telefono:</span>
+                    </div>
+                        <input type="text" name="telefono_adm" maxlength="13" class="form-control" placeholder="Telefono" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1">Contraseña:</span>
+                    </div>
+                        <input type="text" name="passwd_adm" maxlength="30" class="form-control" placeholder="contraseña" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+
+                    <input type="submit" value="Registrar" class="btn btn-success btn-block" readonly="false">
+                </form>  
+                <br>    
+                <br>
                 
+                <table class="table table-bordered table-dark table-hover" method="get"  style="margin-left: -15%">
+                <thead>
+                  <tr>
+                    <th scope="col" class="text-center">Nick del Administrador</th>
+                    <th scope="col" class="text-center">Nombre(s)</th>
+                    <th scope="col" class="text-center">Apellido Paterno</th>
+                    <th scope="col" class="text-center">Apellido Materno</th>
+                    <th scope="col" class="text-center">direccion</th>
+                    <th scope="col" class="text-center">Telefono</th>
+                    <th scope="col" class="text-center">Contraseña</th>     
+                  </tr>
+  
+                </thead>
+                <tbody>
+                   <s:iterator value="ConsultaAdministrador" > 
+                    <tr>    
+                        
+                        <td class="text-center"><s:property value="nick_adm"/></td> 
+                        <td class="text-center"><s:property value="nombre_adm"/></td> 
+                        <td class="text-center"><s:property value="apaterno_adm"/></td> 
+                        <td class="text-center"><s:property value="amaterno_adm"/></td>
+                        <td class="text-center"><s:property value="direccion_adm"/></td>
+                        <td class="text-center"><s:property value="telefono_adm"/></td>
+                        <td class="text-center"><s:property value="passwd_adm"/></td>
+                   
+                    </s:iterator>
+                    </tr>
+                </tbody>
+            </table>   
             </div>
-        </div>
-           
+        </div>      
       <hr style="color:white">  
     <footer>
       <div class="container">
