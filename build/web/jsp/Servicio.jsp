@@ -34,13 +34,7 @@
               <li class="nav-item">
                 <a href="/Autolavado/" class="nav-link">Inicio</a>
               </li>
-              <li class="nav-item">
-                <a href="./jsp/ModificarTrabajador.jsp" class="nav-link">Modificar</a>
-              </li>
-              <li class="nav-item">
-                  <a href="./jsp/EliminarTrabajador.jsp" class="nav-link">Eliminar</a>
-                </li>
-            </ul>
+              </ul>
           </div>
         </div>
       </nav>
@@ -52,7 +46,13 @@
             <div class="form-group">
                 <h2 align="center">Registrar Servicio</h2>
                 <br>
-                <form action="Trabajador2" method="post">
+                <form action="registrarServicio" method="post">
+                    <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1">N° del trabajador:</span>
+                    </div>
+                        <input type="text" name="idTrabajador" maxlength="30" class="form-control" placeholder="Numero del trabajador" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
                     <div class="input-group mb-3">
                     <div class="input-group-prepend">
                       <span class="input-group-text" id="basic-addon1">Cantidad de Carros lavados:</span>
@@ -85,9 +85,9 @@
                     </div>
                     <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                      <span class="input-group-text" id="basic-addon1">Fecha:</span>
+                      <span class="input-group-text" id="basic-addon1">Ganancias:</span>
                     </div>
-                        <input type="text" name="fecha_ser" maxlength="13" class="form-control" placeholder="Fecha" aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="text" name="ganancias_ser" maxlength="20" class="form-control" placeholder="Ganancias para el dueño" aria-label="Username" aria-describedby="basic-addon1">
                     </div>
                     <input type="submit" value="Registrar" class="btn btn-success btn-block" readonly="false">
                 </form>
@@ -102,11 +102,11 @@
                     <th scope="col" class="text-center">Apellido Paterno</th>
                     <th scope="col" class="text-center">Monto total</th>
                     <th scope="col" class="text-center">Sueldo para el trabajador</th>
-                    <th scope="col" class="text-center">Fecha</th>
+                    <th scope="col" class="text-center">Ganancias</th>
                   </tr>
                 </thead>
                 <tbody>
-                   <s:iterator value="Trabajador" > 
+                   <s:iterator value="Servicio" > 
                     <tr>    
                        
                         <td class="text-center"><s:property value="carros_ser"/></td> 
@@ -114,7 +114,7 @@
                         <td class="text-center"><s:property value="apaterno_tra"/></td> 
                         <td class="text-center"><s:property value="monto_ser"/></td> 
                         <td class="text-center"><s:property value="sueldo_tra"/></td> 
-                        <td class="text-center"><s:property value="fecha_ser"/></td> 
+                        <td class="text-center"><s:property value="ganancias_ser"/></td> 
                    
                     </s:iterator>
                     </tr>

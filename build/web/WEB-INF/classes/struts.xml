@@ -34,5 +34,9 @@
             <result name="success">/jsp/EliminarAdministrador.jsp</result>
         </action>
         
+        <action name="registrarServicio" class="DatosDB.Servicio" method="registrarServicio">
+            <result name="success">/jsp/Servicio.jsp</result>
+        </action>
+        
     </package>
 </struts>
